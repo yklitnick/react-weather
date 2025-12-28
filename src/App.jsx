@@ -54,7 +54,14 @@ function App() {
     };
     return (
         <>
-            <main id='main'>
+            <main
+                id='main'
+                className={
+                    typeof weather.main != 'undefined' && weather.main.temp > 60
+                        ? 'warm'
+                        : ''
+                }
+            >
                 <div className='search-box'>
                     <input
                         type='text'
